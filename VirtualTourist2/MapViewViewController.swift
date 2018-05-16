@@ -21,7 +21,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
         self.view.addGestureRecognizer(gestureRecognizer)
-        mapView.delegate = self
         let fetchRequest:NSFetchRequest<Pins> = Pins.fetchRequest()
         if let result = try? dataController.viewContext.fetch(fetchRequest)
         {
@@ -49,17 +48,19 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
     }
     
     @objc func longPress(gestureRecognizer: UIGestureRecognizer) {
-        let touchPoint = gestureRecognizer.location(in: mapView)
-        let newCoordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        let pin = Pins(context: dataController.viewContext)
-        pin.latitude = newCoordinates.latitude
-        pin.longitude = newCoordinates.longitude
-        try? dataController.viewContext.save()
-        pins.append(pin)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = newCoordinates
-        annotation.title = "new pin"
-        mapView.addAnnotation(annotation)
+        if (gestureRecognizer.state == .began) {
+            let touchPoint = gestureRecognizer.location(in: mapView)
+            let newCoordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            let pin = Pins(context: dataController.viewContext)
+            pin.latitude = newCoordinates.latitude
+            pin.longitude = newCoordinates.longitude
+            try? dataController.viewContext.save()
+            pins.append(pin)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = newCoordinates
+            annotation.title = "new pin"
+            mapView.addAnnotation(annotation)
+        }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)

@@ -34,6 +34,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     @IBAction func refreshPhotos(_ sender: Any) {
+        
         let fetchRequest:NSFetchRequest<Photos> = Photos.fetchRequest()
         let predicate = NSPredicate(format: "pins == %@", pin)
         fetchRequest.predicate = predicate
@@ -54,7 +55,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     private func getPhotos() {
-        print("getPhotos")
+        debugPrint("getPhotos")
         //if there are already pictures downloaded for this pin display them
         let fetchRequest:NSFetchRequest<Photos> = Photos.fetchRequest()
         let predicate = NSPredicate(format: "pins == %@", pin)
@@ -94,6 +95,8 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
         //display from flickr after download is complete
         if bolisLocal == false {
+            cell.imageView.image = nil
+            cell.imageView.image = UIImage(named: "loading")
             DispatchQueue.global(qos: .userInitiated).async {
                 self.getImage(imageURL: self.arrayOfImages[indexPath.row])
                 DispatchQueue.main.async {
