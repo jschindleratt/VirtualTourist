@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C34372C20AAF20D00EDE676 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34372B20AAF20D00EDE676 /* DataController.swift */; };
+		5C3B8FE120ACDEBF00D4234C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534EE209F7601006C541E /* Model.xcdatamodeld */; };
 		5C4C5E8A20AB1A1400890451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4C5E8920AB1A1400890451 /* Main.storyboard */; };
 		5C8C787B20AA3A4000E90C14 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C787A20AA3A4000E90C14 /* GCDBlackBox.swift */; };
 		5C9534C9209F71A1006C541E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534C8209F71A1006C541E /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		5C9534E4209F73E5006C541E /* PhotoAlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534E3209F73E5006C541E /* PhotoAlbumCollectionViewController.swift */; };
 		5C9534E6209F74A7006C541E /* SIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534E5209F74A7006C541E /* SIClient.swift */; };
 		5C9534E8209F74E1006C541E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534E7209F74E1006C541E /* Constants.swift */; };
-		5C9534F0209F7601006C541E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534EE209F7601006C541E /* Model.xcdatamodeld */; };
 		5C9534F5209F7840006C541E /* Photos+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534F1209F7840006C541E /* Photos+CoreDataClass.swift */; };
 		5C9534F6209F7840006C541E /* Photos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534F2209F7840006C541E /* Photos+CoreDataProperties.swift */; };
 		5C9534F7209F7840006C541E /* Pins+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9534F3209F7840006C541E /* Pins+CoreDataClass.swift */; };
@@ -183,11 +183,11 @@
 				5C9534E2209F738F006C541E /* MapViewViewController.swift in Sources */,
 				5C9534F5209F7840006C541E /* Photos+CoreDataClass.swift in Sources */,
 				5C9534E8209F74E1006C541E /* Constants.swift in Sources */,
-				5C9534F0209F7601006C541E /* Model.xcdatamodeld in Sources */,
 				5C9534E6209F74A7006C541E /* SIClient.swift in Sources */,
 				5C9534C9209F71A1006C541E /* AppDelegate.swift in Sources */,
 				5C9534F8209F7840006C541E /* Pins+CoreDataProperties.swift in Sources */,
 				5C34372C20AAF20D00EDE676 /* DataController.swift in Sources */,
+				5C3B8FE120ACDEBF00D4234C /* Model.xcdatamodeld in Sources */,
 				5C8C787B20AA3A4000E90C14 /* GCDBlackBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -96,7 +96,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
         //display from flickr after download is complete
         if bolisLocal == false {
             cell.imageView.image = nil
-            cell.imageView.image = UIImage(named: "loading")
+            cell.imageView.image = UIImage(named: "hourglass")
             DispatchQueue.global(qos: .userInitiated).async {
                 self.getImage(imageURL: self.arrayOfImages[indexPath.row])
                 DispatchQueue.main.async {
